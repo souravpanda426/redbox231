@@ -29,7 +29,7 @@ public class InterviewQuestion {
 		for(int i =0;i<x.length();i++) {
 			char ch = x.charAt(i);
 			
-			if(ch>='1' & ch<='9') {
+			if(ch>='0' & ch<='9') {
 				sum = sum + (ch-48);
 				
 				
