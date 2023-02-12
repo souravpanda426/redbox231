@@ -10,9 +10,9 @@ public class Cat extends Tiger{
 		}
 		
 		
-		else if(!(t instanceof Leopard)){
+		else if((t instanceof Tiger)){
 			
-			Leopard l =(Leopard)t;
+			System.out.print("instance of tiger");
 			
 			
 			
@@ -34,7 +34,7 @@ public class Cat extends Tiger{
 	
 	public static void main(String[] args) {
 		
-		Tiger t = new Cat();
+		Cat t = new Cat();
 		methodA(t);
 	}
 
