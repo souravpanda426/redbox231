@@ -2,6 +2,6 @@ package mypackage;
 
 public interface TestLambda {
 	
-	public void sayHello(String message);
+	public void sayHello(String message); 
 
-}
+}     
