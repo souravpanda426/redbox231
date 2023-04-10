@@ -1,15 +1,19 @@
 package Scripts;
 
 
-import java.io.FileInputStream;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Date;
-import java.util.Properties;
+
 import java.util.Random;
 
+import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.safari.SafariDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
@@ -19,12 +23,14 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+import utility.CommonMethods;
 
 
 
 
 
-public class BaseTest {
+
+public class BaseTest implements IAutoConstant {
 	
 	
 	public static WebDriver driver;
@@ -41,37 +47,41 @@ public class BaseTest {
 		
 		Random r = new Random();
 		Date d = new Date();
-		
-		
-		reports = new ExtentReports("/Users/sourav/eclipse-workspace/MYNEWPROJECT/test-output/ExtentReports/ExtentReport"+r.nextInt()+ d +".html",false);
-		logger = reports.startTest("amazontestone");
+		reports = new ExtentReports(extentreportpath+r.nextInt()+ d +".html",true);
+		logger = reports.startTest("mytest");
 		
 
 		
-		Properties property = new Properties();
-		property.load(new FileInputStream("/Users/sourav/eclipse-workspace/MYNEWPROJECT/Resources/configuration.properties"));
-		Object object = property.get("browser");
-		String string = object.toString();
-		System.out.println(string);
-		if(string.equalsIgnoreCase("FireFox")) {
+		String browserName = CommonMethods.getDataFromProperties("browser");
+		System.out.println(browserName + "  browser launch ");
+		if(browserName.equalsIgnoreCase("FireFox")) {
 		
-		System.setProperty("webdriver.gecko.driver", "/Users/sourav/eclipse-workspace/MYNEWPROJECT/src/driver/geckodriver");
+		System.setProperty("webdriver.gecko.driver",  geckdriverpath);
 		driver = new FirefoxDriver();
 		driver.manage().window().maximize();
-
-	    
-		driver.get("https://www.ilovepdf.com/pdf_to_word");
-		//driver.get("https://www.amazon.com/");
-		//driver.get("https://www.youtube.com/");
+         
 		}
+		else {
+			
+			//System.setProperty("webdriver.chrome.driver","/Users/sourav/git/repository12/MYNEWPROJECT/Resources/driver/chromedriver");
+			
+		    driver = new SafariDriver();
+		}
+			
+		
+		String url = CommonMethods.getDataFromProperties("url");
+		driver.get(url);
+		
+		//driver.get("https://www.amazon.com/");
+		//driver.get(url);
+		//driver.get("https://nxtgenaiacademy.com/multiplewindows/");
+		
 		
 	
 		
-		else {
-			System.exit(0);
-		}
-			
-	}
+		
+	}		
+	
 	
 	
 	@AfterMethod
@@ -93,7 +103,7 @@ public class BaseTest {
 		
 		else if(result.getStatus()==ITestResult.SUCCESS){
 			
-		logger.log(LogStatus.PASS, "test case failed is"+result.getName());
+		logger.log(LogStatus.PASS, "test case passed is"+result.getName());
 		
 		}
 		
@@ -104,18 +114,18 @@ public class BaseTest {
 		reports.flush();
 		
 		
+	
+		System.out.println("closing browser");
 		
+		driver.close();
 		
 		
 		
 	}
 	
-	@AfterSuite
-	public void closeReport() throws IOException {
-		
-		
-		
-		driver.close();
-	}
+	
+	
+   
+
 
 }
