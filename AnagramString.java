@@ -6,7 +6,7 @@ public class AnagramString {
 	public static void main(String[] args) {
 		
 		System.out.println(isAnagram("ABCDE","EADCB"));
-		
+		/////no bro
 	}
 	
 	
