@@ -6,7 +6,7 @@ public class SampleMy {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
+		//Longest Common Prefix using Sorting
 		  String ar[] = {"apple","ape","april"};
 		  String y = " ";
 		  String maxlen=" ";
