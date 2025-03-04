@@ -1,10 +1,16 @@
-package mypackage;
+  package mypackage;
+
+import java.util.ArrayList;
 
 public class KadaneAlgorithm {
+	
+	static ArrayList<Integer> al;
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int[] x = {1, 2, 3, -2, 5};
+		
+
 		
 		int start=0;
 		
@@ -14,36 +20,112 @@ public class KadaneAlgorithm {
 		
 		for(int i=start;i<=end-1;i++) {
 			
-			int sum = x[i];
+		
 			
 			
 			for(int k =start+1;k<=end-1;k++) {
 				
-				sum = sum + x[k];
+				int d = i;
 				
-			}
-			
-			if(max<sum) {
 				
-				max=sum;
+			  al =  new ArrayList<Integer>();
+			  
+			  
+			
+				while(d<=k) {
+					
+					al.add(x[d]);
+					
+					d++;
+				}
+				
+				//System.out.println(al);
+				
+				int sum =0;
+				
+				
+				for(int j=0;j<al.size();j++) {
+					
+					sum = sum + al.get(j);
+					
+				
+				}
+				
+				//System.out.println(sum);
+				
+                if(max<sum) {
+					
+					max=sum;
+				}
+				
+			
 			}
-			
-			
 			
 			
 			
 		}
 		
-		System.out.println(max);
-		
-		while(start<end) {
+	for(int i=start;i<=end-1;i++) {
 			
-			System.out.println(x[start]);
+
 			
-			start++;
+			
+			
+			for(int k =start+1;k<=end-1;k++) {
+				
+				
+				int d = i;
+				
+			  al =  new ArrayList<Integer>();
+			
+				while(d<=k) {
+					
+					al.add(x[d]);
+					
+					d++;
+				}
+				
+				
+				int sum =0;
+				
+				
+				for(int j=0;j<al.size();j++) {
+					
+					sum = sum + al.get(j);
+					
+				
+				
+				if(max==sum) {
+					
+					
+					
+					while(i<=k) {
+						
+						System.out.println(x[i]);
+						i++;
+					}
+				}
+				
+				
+				
+			}
+				
+			
+			}
+			
+			
+			
 		}
+
+		
+      
 		
 
 	}
+		
 
 }
+	
+
+	
+

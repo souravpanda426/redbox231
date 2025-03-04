@@ -4,7 +4,7 @@ public class SortArrays {
 
 	public static void main(String[] args) {
 		
-int[] x = {6,5,4,32,1};
+int[] x = {2,0,2,1,1,0};
 
 
  for(int i =0;i<x.length;i++) {

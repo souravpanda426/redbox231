@@ -5,7 +5,7 @@ public class AnagramString {
 	
 	public static void main(String[] args) {
 		
-		System.out.println(isAnagram("ABCDE","EADCB"));
+		System.out.println(isAnagram("eta","ate"));
 		
 	}
 	
@@ -27,6 +27,7 @@ public class AnagramString {
 				
 				count1[ch-97]++;
 			}
+			
 			
 		}
 		

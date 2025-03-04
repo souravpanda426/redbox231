@@ -7,7 +7,7 @@ public class TwoPlaces {
 		
 		//Question - Check if a string can be obtained by rotating another string 2 places
 		String a = "amazon";
-		String	b = "azonam";
+		String	b = "zonama";
 		
 		
 		boolean rotated = isRotated(a,b);
@@ -21,7 +21,7 @@ public class TwoPlaces {
 	
 	public static boolean isRotated(String x , String y) {
 		
-		String c = y.substring(2, y.length())+y.substring(0, 2);
+		String c = y.substring(y.length()-2, y.length())+y.substring(0, y.length()-2);
 		
 		
 		

@@ -7,6 +7,7 @@ public class Addition {
 	public static void main(String[] args) {
 
 
+		System.out.println("BANC".contains("BA"));
 
 
 		int x = 600;

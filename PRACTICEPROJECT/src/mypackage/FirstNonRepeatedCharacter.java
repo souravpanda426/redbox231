@@ -9,7 +9,7 @@ public class FirstNonRepeatedCharacter {
 
 
 
-		String x = "SANDEEP";
+		String x = "ANDEAEP";
 		LinkedHashMap<Character,Integer> hm = new LinkedHashMap<Character,Integer>();
 
 

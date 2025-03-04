@@ -20,7 +20,7 @@ public class Replace {
 				st=z;
 			}
 			
-			a = a + st;
+			a = a + st+" ";
 			
 			
 		}

@@ -1,9 +1,11 @@
+import java.text.SimpleDateFormat;
 
 public class EqulibriumPoint {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
+	
 		
 		int x[] = {-7, 1, 5, 2, -4, 3, 0};
 		
