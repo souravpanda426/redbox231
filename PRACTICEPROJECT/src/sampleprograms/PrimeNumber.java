@@ -17,7 +17,12 @@ public class PrimeNumber {
 			System.out.println("yes prime");
 		}
 		
+		else if(x==0) {
+			System.out.println("not prime");
+		}
+		
 		else {
+			
 			System.out.println("not prime");
 		}
 		

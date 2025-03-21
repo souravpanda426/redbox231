@@ -1,15 +1,16 @@
-package mypackage;
+package takeyouforward;
 
 import java.util.ArrayList;
 
 public class ArrayPermutation {
+	
 	
 	static ArrayList<Integer> al = new ArrayList<Integer>();
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		int[] x = {1,2,3};
+	int[] x = {1,2,3};
 		
 		int start = 0;
 		int end = x.length-1;
@@ -17,6 +18,7 @@ public class ArrayPermutation {
 		generatePermutation(x,start,end);
 		
 		
+		System.out.println(al);
 		
 		for(int i = 0;i<al.size();i++) {
 			
@@ -78,7 +80,7 @@ public class ArrayPermutation {
 		
 	}
 	
-	public static int[] swap(int[] y,int a, int b) {
+public static int[] swap(int[] y,int a, int b) {
 		
 		int temp = y[a];
 		
@@ -89,4 +91,6 @@ public class ArrayPermutation {
 		
 	}
 
-}
+	}
+
+

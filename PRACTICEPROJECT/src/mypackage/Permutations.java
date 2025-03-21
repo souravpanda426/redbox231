@@ -19,6 +19,8 @@ public class Permutations {
 		if(start==end-1) {
 			
 			System.out.println(x);
+			
+			return;
 		}
 		
 		else {
@@ -27,16 +29,9 @@ public class Permutations {
 			
 		      x= swap(x,start,i);
 		      
-		      System.out.println("before permute i value is"+ i);
-		      System.out.println("before permute start value is"+ start);
-		      
-		      System.out.println("before permute x value is "+x);
+		   
 			permute(x,start+1,end);
 			
-			System.out.println("after permute i value is"+ i);
-		      System.out.println("after permute start value is"+ start);
-		      
-		      System.out.println("after permute x value is "+x);
 			
 		
 			 x= swap(x,start,i);
